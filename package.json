@@ -1,0 +1,38 @@
+{
+  "name": "terrain",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel static/index.html",
+    "build": "parcel build static/index.html",
+    "pretest": "npm run lint && tsc --noEmit",
+    "lint": "eslint . --cache --fix --ext .ts,.tsx",
+    "format": "prettier --loglevel warn --write \"**/*.{ts,tsx,css,md}\"",
+    "posttest": "npm run format"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.30.0",
+    "@typescript-eslint/parser": "^2.30.0",
+    "eslint": "^6.8.0",
+    "husky": ">=4",
+    "lint-staged": ">=10",
+    "parcel-bundler": "^1.12.4",
+    "prettier": ">=2",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "orbit-controls-es6": "^2.0.1",
+    "simplex-noise": "^2.4.0",
+    "three": "0.108.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": "eslint --cache --fix",
+    "*.{ts,tsx,css,md}": "prettier --write"
+  }
+}
