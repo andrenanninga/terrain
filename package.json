@@ -24,7 +24,7 @@
   "dependencies": {
     "orbit-controls-es6": "^2.0.1",
     "simplex-noise": "^2.4.0",
-    "three": "0.108.0"
+    "three": "0.137.0"
   },
   "husky": {
     "hooks": {
